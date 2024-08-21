@@ -14,8 +14,8 @@ Follow these steps to get the project up and running:
 
 1. **Clone the Repository**
 
-git clone <repository-url>
-cd <repository-directory>
+git clone repository-url
+cd repository-directory
 
 2. **Install GEMS**
 bundle install
@@ -23,8 +23,8 @@ bundle install
 3. **Configure the Database**
 
 Add your database username and password to the `.env` file:
-DATABASE_USERNAME=<your-database-username>
-DATABASE_PASSWORD=<your-database-password>
+DATABASE_USERNAME=your-database-username
+DATABASE_PASSWORD=your-database-password
 
 4. **Set Up the Database**
 
