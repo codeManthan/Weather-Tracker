@@ -26,9 +26,9 @@ Add your database username and password to the `.env` file:
 DATABASE_USERNAME=your-database-username
 DATABASE_PASSWORD=your-database-password
 
-4. **Set Up the Database Default User**
+4. **Set Up the Database**
 
-rails db:seed
+rails db:setup
 
 5. **Ensure Redis Server is Running**
 
