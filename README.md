@@ -39,24 +39,31 @@ Start your Redis server if it's not already running.
    1. Go to https://openweathermap.org/, create an account, and get your API key.
    2. Add the API key to your `.env` file:
 
-      ```
-      OPEN_WEATHER_KEY=<your-api-key>
+   ```
+   OPEN_WEATHER_KEY=<your-api-key>
    ```
 
 7. **Populate the Database with Default user**
-rails db:seed
+
+   ```
+   rails db:seed
+   ```
+
 
 8. **Import Default Cities**
 
 Use the rake task to import default cities:
-bundle exec rake db
-
+   ```
+   bundle exec rake db
+   ```
 
 9. **Configure Cron Jobs**
 
 Ensure your system supports Cron for scheduling tasks. The app requires a Cron job to fetch temperatures for cities every day at 12:00 PM. To set this up, run:
 
-bundle exec whenever --update-crontab
+   ```
+   bundle exec whenever --update-crontab
+   ```
 
 Check the `schedule.rb` comments for more details.
 
