@@ -1,0 +1,12 @@
+<table class="table table-striped table-hover text-center">
+  <tbody>
+    <% @cities.each do |city| %>
+      <tr>
+        <td class="text-center"><%= city.name %></td>
+        <td class="text-center">
+          <%= link_to 'View Temperatures', weather_report_path(city_id: city.id), class: 'btn btn-primary' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

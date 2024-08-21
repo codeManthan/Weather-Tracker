@@ -1,0 +1,48 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+/* Base styles for flash messages */
+.flash-message {
+  position: fixed;
+  top: 10px;
+  right: 10px; /* Change to right side */
+  padding: 15px;
+  margin: 0;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+/* Animation to fade out after 7 seconds */
+.flash-message.fade-out {
+  opacity: 0;
+}
+
+/* Specific styles for notice and alert */
+.flash-message.notice {
+  background-color: #4CAF50; /* Green for success */
+}
+
+.flash-message.alert {
+  background-color: #f44336; /* Red for error */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px); /* Change to Y-axis for top-to-bottom movement */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to flash messages */
+.flash-message {
+  animation: fadeIn 0.5s ease-out;
+}

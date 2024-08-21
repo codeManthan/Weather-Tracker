@@ -1,0 +1,18 @@
+<div class="row">
+  <% @temp_data.each_with_index do |temp, index| %>
+    <% break if index == @temp_data.size - 1 %>
+    <div class="col-md-2 col-sm-4 mb-4">
+      <div class="card h-100">
+        <div class="card-header text-center bg-secondary text-white">
+          <%= week_day(temp[:date]) %>
+        </div>
+        <div class="card-body text-center">
+          <%= image_tag "https://openweathermap.org/img/wn/#{temp[:icon]}@2x.png", alt: "Weather Icon", class: "img-fluid mb-2" %>
+          <p class="card-text"><strong><%= temp[:temperature] %>K</strong></p>
+          <p class="card-text text-muted"><%= temp[:humidity] %>% Humidity</p>
+          <p class="card-text text-muted"><%= temp[:wind_speed] %> m/s Wind</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

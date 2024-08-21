@@ -1,0 +1,56 @@
+<div class="container">
+  <canvas id="temperatureChart" 
+          data-labels="<%= @chart_labels.to_json %>" 
+          data-data="<%= @chart_data.to_json %>">
+  </canvas>
+</div>
+
+
+<!-- Chart.js CDN link -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const chartElement = document.getElementById('temperatureChart');
+    
+    if (chartElement) {
+      const ctx = chartElement.getContext('2d');
+
+      // Get data from data attributes
+      const labels = JSON.parse(chartElement.dataset.labels || "[]");
+      const data = JSON.parse(chartElement.dataset.data || "[]");
+
+      // Initialize the chart
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Temperature (K)',
+            data: data,
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Date'
+              }
+            },
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Temperature (K)'
+              }
+            }
+          }
+        }
+      });
+    }
+  });
+</script>

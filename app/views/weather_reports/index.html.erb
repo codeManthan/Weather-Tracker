@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="jumbotron text-center">
+    <h2 class="display-4">Welcome to the Weather Tracker</h2>
+    <p class="lead">Check out the latest weather reports for your favorite cities.</p>
+    <hr class="my-4">
+    <p>Stay informed with up-to-date weather data for cities across the globe.</p>
+  </div>
+  
+  <!-- Turbo Frame for the Table -->
+  <turbo-frame id="cities_table">
+    <%= render partial: "cities_table", locals: { cities: @cities } %>
+  </turbo-frame>
+
+  <div class="text-center my-4">
+    <%= link_to 'Add new City', '#', class: "btn btn-outline-primary", data: { bs_toggle: "modal", bs_target: "#newCityModal" } %>
+  </div>
+
+  <!-- Create new city Modal -->
+  <%= render 'new_city_modal' %>
+
+  <div class="footer mt-5">
+    <p class="text-center text-muted">Weather data provided by OpenWeatherMap.</p>
+  </div>
+</div>

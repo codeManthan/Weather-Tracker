@@ -1,0 +1,36 @@
+<div class="card shadow-lg h-100 my-5">
+  <div class="card-header text-center bg-secondary text-white">
+    <h3><%= week_day(@temp_data.last[:date]) %> - Latest Weather Update</h3>
+  </div>
+  <div class="card-body text-center pb-5">
+    <div class="row">
+      <div class="col-8">
+        <%= render "chart" %>
+      </div>
+      <div class="col-4 pt-4">
+        <div class="card shadow-sm border-2 h-100">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <%= image_tag "https://openweathermap.org/img/wn/#{@temp_data.last[:icon]}@2x.png", alt: "Weather Icon", class: "img-fluid" %>
+            </div>
+            <h4 class="card-title mb-3 font-weight-bold">
+              <%= @temp_data.last[:mainline] %>
+            </h4>
+            <p class="card-text text-muted mb-4">
+              <em><%= @temp_data.last[:description] %></em>
+            </p>
+            <p class="card-text display-4 mb-2">
+              <strong><%= @temp_data.last[:temperature] %> K</strong>
+            </p>
+            <p class="card-text text-muted mb-2">
+              <%= @temp_data.last[:humidity] %>% Humidity
+            </p>
+            <p class="card-text text-muted">
+              <%= @temp_data.last[:wind_speed] %> m/s Wind
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

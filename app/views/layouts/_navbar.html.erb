@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+  <div class="container-fluid">
+    <%= link_to "Weather Tracker", root_path, class:"navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item mx-4">
+          <%= link_to "About Us", pages_about_path, class:"nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Weather Report", weather_reports_path, class:"nav-link active" %>
+        </li>
+        <li class="nav-item dropdown mx-4">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-user"></i> <!-- User icon -->
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="userDropdown">
+            <% if user_signed_in? %>
+              <!-- Settings option -->
+              <li>
+                <%= link_to edit_user_registration_path, class: "dropdown-item d-flex align-items-center" do %>
+                  <i class="fa fa-cog me-2"></i> <!-- Settings icon -->
+                  Settings
+                <% end %>
+              </li>
+              <!-- Logout option -->
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item d-flex align-items-center" do %>
+                  <i class="fa fa-mail-reply me-2"></i> <!-- Log out icon -->
+                  Sign Out
+                <% end %>
+              </li>
+            <% else %>
+              <!-- Log in option -->
+              <li>
+                <%= link_to new_user_session_path, class: "dropdown-item d-flex align-items-center" do %>
+                  <i class="fa fa-user-plus me-2"></i> <!-- Log in icon -->
+                  Log in
+                <% end %>
+              </li>
+              <!-- Sign up option -->
+              <li>
+                <%= link_to new_user_registration_path, class: "dropdown-item d-flex align-items-center" do %>
+                  <i class="fa fa-address-card me-2"></i> <!-- Sign up icon -->
+                  Sign up
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
