@@ -13,12 +13,15 @@ Welcome to the Weather Tracker Application! This project allows you to monitor w
 Follow these steps to get the project up and running:
 
 1. **Clone the Repository**
-
-git clone repository-url
-cd repository-directory
+   ```
+   git clone repository-url
+   cd repository-directory
+   ```
 
 2. **Install GEMS**
-bundle install
+   ```
+   bundle install
+   ```
 
 3. **Configure the Database**
 
@@ -27,8 +30,9 @@ DATABASE_USERNAME=your-database-username
 DATABASE_PASSWORD=your-database-password
 
 4. **Set Up the Database**
-
-rails db:setup
+   ```
+   rails db:setup
+   ```
 
 5. **Ensure Redis Server is Running**
 
@@ -54,7 +58,7 @@ Start your Redis server if it's not already running.
 
 Use the rake task to import default cities:
    ```
-   bundle exec rake db
+   bundle exec rake db:import_cities
    ```
 
 9. **Configure Cron Jobs**
@@ -69,9 +73,9 @@ Check the `schedule.rb` comments for more details.
 
 10. **Start the Server**
 
- ```
- bin/dev
- ```
+    ```
+    bin/dev
+    ```
 
 11. **Run Test Cases**
 
