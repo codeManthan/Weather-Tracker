@@ -107,4 +107,4 @@ Follow these steps to get the project up and running:
    ```
 
 DEMO:
-   https://drive.google.com/file/d/1BYTcAooF0AsoIbGqeNWw_nheb1iar7Pa/view?usp=drive_link
+   https://drive.google.com/file/d/1BYTcAooF0AsoIbGqeNWw_nheb1iar7Pa/view?usp=sharing
