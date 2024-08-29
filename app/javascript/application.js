@@ -8,9 +8,6 @@ import "./controllers"
 // Import Bootstrap
 import * as bootstrap from "bootstrap"
 
-// Import channels (assuming you have ActionCable channels)
-import "./channels"
-
 // Initialize Stimulus
 const application = Application.start()
 const context = require.context("./controllers", true, /\.js$/)

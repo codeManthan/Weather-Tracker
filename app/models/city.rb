@@ -20,8 +20,8 @@ class City < ApplicationRecord
           temperature: (temps.sum(&:temperature) / temps.size).round(2),
           recorded_at: temps.max_by(&:recorded_at).recorded_at,
           icon: temps.max_by(&:recorded_at).icon,
-          humidity: temps.max_by(&:recorded_at).humidity,
-          wind_speed: temps.max_by(&:recorded_at).wind_speed,
+          humidity: temps.max_by(&:recorded_at).humidity.round(2),
+          wind_speed: temps.max_by(&:recorded_at).wind_speed.round(2),
           mainline: temps.max_by(&:recorded_at).mainline,
           description: temps.max_by(&:recorded_at).description
         }

@@ -68,9 +68,7 @@ group :development do
   gem "web-console"
   gem 'dotenv-rails'
   gem 'pry'
-  gem 'pry-rails'
-
-  
+  gem 'letter_opener'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"

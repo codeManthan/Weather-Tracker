@@ -37,3 +37,6 @@
 
 # Environmnet Variables
 .env
+
+# ignore latest database yml changes
+/config/database.yml
